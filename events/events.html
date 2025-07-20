@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onmouseout="changeBackgroundBlue()" onmouseover="changeBackground()">
+        click me
+    </button>
+    <!-- 
+    <button onclick="changeBackgroundGreen()">
+        click me
+    </button>
+    -->
+    <script>
+        function changeBackground(){
+            document.body.style.background = "red";
+        }
+        function changeBackgroundBlue(){
+            document.body.style.background = "blue";
+        }
+    </script>
+</body>
+</html>

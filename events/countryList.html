@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Countries Selector</title>
+    <style>
+        /* Style for the custom dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 250px;
+        }
+
+        /* Style for the button (dropdown toggle) */
+        .dropdown button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: left;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            width: 100%;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* Dropdown content items */
+        .dropdown-content a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        /* Hover effect for items */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Flag images styling */
+        .country-flag {
+            width: 20px;
+            height: 15px;
+            margin-right: 10px;
+        }
+
+        /* Show the dropdown when clicked */
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+    </style>
+    <script>
+        // Function to toggle the dropdown visibility
+        function toggleDropdown() {
+            document.querySelector('.dropdown').classList.toggle('active');
+        }
+
+        // Function to handle country selection and display next to "You selected"
+        function showCountry(country, flagSrc) {
+            const countryDisplay = document.getElementById("countryDisplay");
+            countryDisplay.innerHTML = `You selected: <img src="${flagSrc}" class="country-flag"> ${country}`;
+            document.querySelector('.dropdown').classList.remove('active'); // Close the dropdown
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Select an African Country:</h2>
+
+    <div class="dropdown">
+        <button onclick="toggleDropdown()">Select a country</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showCountry('Nigeria', 'https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Nigeria.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Flag_of_Nigeria.svg" class="country-flag">Nigeria</a>
+            <a href="#" onclick="showCountry('South Africa', 'https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" class="country-flag">South Africa</a>
+            <a href="#" onclick="showCountry('Kenya', 'https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Kenya.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Kenya.svg" class="country-flag">Kenya</a>
+            <a href="#" onclick="showCountry('Egypt', 'https://upload.wikimedia.org/wikipedia/commons/f/ef/Flag_of_Egypt.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ef/Flag_of_Egypt.svg" class="country-flag">Egypt</a>
+            <a href="#" onclick="showCountry('Ethiopia', 'https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/7/71/Flag_of_Ethiopia.svg" class="country-flag">Ethiopia</a>
+            <a href="#" onclick="showCountry('Uganda', 'https://upload.wikimedia.org/wikipedia/commons/4/47/Flag_of_Uganda.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Flag_of_Uganda.svg" class="country-flag">Uganda</a>
+            <a href="#" onclick="showCountry('Ghana', 'https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg" class="country-flag">Ghana</a>
+            <a href="#" onclick="showCountry('Morocco', 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Flag_of_Morocco.svg" class="country-flag">Morocco</a>
+            <a href="#" onclick="showCountry('Somalia', 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Flag_of_Somalia.svg" class="country-flag">Somalia</a>
+            <a href="#" onclick="showCountry('Algeria', 'https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg" class="country-flag">Algeria</a>
+            <a href="#" onclick="showCountry('Tanzania', 'https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Flag_of_Tanzania.svg" class="country-flag">Tanzania</a>
+            <a href="#" onclick="showCountry('Angola', 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Angola.svg" class="country-flag">Angola</a>
+            <a href="#" onclick="showCountry('Sudan', 'https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Sudan.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Flag_of_Sudan.svg" class="country-flag">Sudan</a>
+            <a href="#" onclick="showCountry('Zambia', 'https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg" class="country-flag">Zambia</a>
+            <a href="#" onclick="showCountry('Zimbabwe', 'https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg" class="country-flag">Zimbabwe</a>
+            <a href="#" onclick="showCountry('Côte dIvoire', 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg" class="country-flag">Côte d'Ivoire</a>
+            <a href="#" onclick="showCountry('Senegal', 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Flag_of_Senegal.svg" class="country-flag">Senegal</a>
+            <a href="#" onclick="showCountry('Rwanda', 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Rwanda.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Rwanda.svg" class="country-flag">Rwanda</a>
+            <a href="#" onclick="showCountry('Namibia', 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Namibia.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Namibia.svg" class="country-flag">Namibia</a>
+            <a href="#" onclick="showCountry('Botswana', 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Flag_of_Botswana.svg" class="country-flag">Botswana</a>
+            <a href="#" onclick="showCountry('Mali', 'https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/Flag_of_Mali.svg" class="country-flag">Mali</a>
+            <a href="#" onclick="showCountry('Mozambique', 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique.svg')"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Flag_of_Mozambique.svg" class="country-flag">Mozambique</a>
+        </div>
+    </div>
+
+    <p id="countryDisplay">You selected: </p>
+
+</body>
+</html>

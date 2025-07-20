@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigText{
+            font-size: 50px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="unluckyOne">I love London (I wrote this code manually)</h1>
+    <h1 name="BigCity" class="bigText">The other big city</h1>
+    <h1 name="BigCity" class="bigText">The other big city</h1> 
+
+    <script>
+        for (let i = 0; i < 2; i++) {
+            let anotherH1 = document.createElement('h1');
+            anotherH1.textContent = 'I love London (I wrote this code in JS)';
+            anotherH1.style.color = "red";
+            document.body.appendChild(anotherH1);
+        }
+
+        let anotherP = window.document.createElement('p');
+        anotherP.textContent = 'I love London (I wrote this code in JS)';
+        anotherP.style.color = "blue";
+        document.body.appendChild(anotherP);
+
+        //document.body.removeChild(anotherP)
+
+        // let h1 = document.getElementsByTagName('h1');
+        // for (let i = 0; i < h1.length; i++) {
+        //      h1[i].style.color = "";
+        // }
+
+        //let h1s = document.getElementsByTagName('BigCity');
+        //for (let i = 0; i < h1s.length; i++) {
+        // h1s[i].style.color = "brown";
+        //}
+
+        // let h1 = document.getElementsByClassName('h1');
+        // for (let i = 0; i < h1.length; i++) {
+        // h1[i].style.color = "purple";
+        // }
+
+        let h1 = document.querySelectorAll(".bigText");
+        for (let i = 0; i < h1.length; i++) {
+            h1[i].style.color = "brown";
+        }
+
+        // Fixing the typo in the selector for #unluckyOne
+        let unluckyOne = document.querySelector("#unluckyOne");
+        unluckyOne.style.color = "purple";
+        unluckyOne.textContent = "I love China"; 
+    </script>
+</body>
+</html>

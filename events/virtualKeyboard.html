@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Event Visualizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(10, 50px);
+            gap: 10px;
+        }
+        .key {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            user-select: none;
+        }
+        .key.pressed {
+            background-color: #007bff;
+            color: #fff;
+            border-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Press a Key!</h1>
+    <div class="keyboard" id="keyboard">
+        <!-- Keys will be dynamically generated -->
+    </div>
+
+    <script>
+        const keys = "abcdefghijklmnopqrstuvwxyz0123456789".split("");
+        const keyboardDiv = document.getElementById("keyboard");
+
+        // Dynamically create key elements
+        keys.forEach(key => {
+            const keyDiv = document.createElement("div");
+            keyDiv.classList.add("key");
+            keyDiv.textContent = key;
+            keyDiv.id = `key-${key}`;
+            keyboardDiv.appendChild(keyDiv);
+        });
+
+        // Add event listener for keydown
+        document.addEventListener("keydown", event => {
+            const key = event.key.toLowerCase();
+            const keyElement = document.getElementById(`key-${key}`);
+            if (keyElement) {
+                keyElement.classList.add("pressed");
+            }
+        });
+
+        // Add event listener for keyup
+        document.addEventListener("keyup", event => {
+            const key = event.key.toLowerCase();
+            const keyElement = document.getElementById(`key-${key}`);
+            if (keyElement) {
+                keyElement.classList.remove("pressed");
+            }
+        });
+    </script>
+</body>
+</html>
