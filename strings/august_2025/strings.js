@@ -14,3 +14,11 @@
 // var lastName = "ABDULLAHI";
 // console.log(firstName.toUpperCase())
 // console.log(lastName.toLowerCase())
+
+// var info1 = "Maryam is a student. ";
+// var info2 = "She is in year 8. ";
+// var info3 = "She is 12 years old";
+// var information = info1.concat(info2, info3)
+// console.log(information)
+// this is concating. Concating is when you add variables together.
+
